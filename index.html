@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro</title>
+  <style>
+    * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #eef2f5; margin: 0; padding: 20px; display: flex; justify-content: center; }
+    .card { background: white; width: 100%; max-width: 480px; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    h2 { color: #1a252f; text-align: center; margin-top: 0; margin-bottom: 20px; font-size: 22px; }
+    .group { margin-bottom: 18px; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; color: #34495e; font-size: 14px; }
+    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px; background-color: #f8fafc; }
+    input:focus, select:focus, textarea:focus { border-color: #3b82f6; outline: none; background-color: #fff; }
+    button { width: 100%; padding: 14px; background-color: #2563eb; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    button:disabled { background-color: #94a3b8; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>@guardarropa<h2>
+    
+    <form id="miFormulario">
+      
+      <!-- 1) Es la fecha en la que ingreso el dato -->
+      <div class="group">
+        <label for="fecha">Hoy es:</label>
+        <input type="date" id="fecha" name="fecha" required>
+      </div>
+
+      <!-- 2) tipo de atuendo, desplegable manual -->
+      <div class="group">
+        <label for="tipoAtuendo">Tipo de atuendo:</label>
+        <select id="tipoAtuendo" required>
+          <option value=""> -- Elige -- </option>
+          <option value="usado">usado</option>
+          <option value="inspo">inspo</option>
+        </select>
+      </div>
+
+      <!-- 3) Destino desplegable desde sheets 1-->
+      <div class="group">
+        <label for="destino">Destino:</label>
+        <select id="destino" required>
+          <option value="">-- Elige desde sheets --</option>
+        </select>
+      </div>
+
+      <!-- 4) pants desplegable desde sheets 2-->
+      <div class="group">
+        <label for="pants">Pants: </label>
+        <select id="pants" required>
+          <option value="">-- Elige desde sheets --</option>
+        </select>
+      </div>
+
+      <!-- 5) shirt, es texto libre -->
+      <div class="group">
+        <label for="shirt">Shirt:</label>
+        <input type="text" id="shirt" placeholder="Escribe aquí..." required>
+      </div>
+
+      <!-- 6) jersey, texto libre -->
+      <div class="group">
+        <label for="jersey">Jersey:</label>
+        <input type="text" id="jersey" placeholder="Escribe aquí..." required>
+      </div>
+
+      <!-- 7) shoes, desplegable de sheets 3 -->
+      <div class="group">
+        <label for="shoes">Shoes:</label>
+        <select id="shoes" required>
+          <option value="">-- Elige desde sheets --</option>
+        </select>
+      </div>
+
+      <!-- 8) bag, desplegable de sheets 4-->
+      <div class="group">
+        <label for="bag">Bag:</label>
+        <select id="bag" required>
+          <option value="">-- Elige desde sheets --</option>
+        </select>
+      </div>
+
+      <!-- 9) hair, texto libre -->
+     <div class="group">
+        <label for="hair">Hair:</label>
+        <input type="text" id="hair" placeholder="Escribe aquí..." required>
+      </div>
+
+      <button type="submit" id="btnEnviar">Guardar Registro</button>
+    </form>
+  </div>
+
+<!--        VIENE EL SCRIPT PARA EXPORTAR DESPLEGABLES DE SHEETS -->
+  <script src="script.js"></script></script>
+
+</body>
+</html>
